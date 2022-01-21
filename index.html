@@ -22,14 +22,17 @@
       <div class="box-faq" role="group">
         <div class="thumbnail">
           <picture class="card-thumbnail">
-            <source media="(min-width:580px)" srcset="./images/illustration-woman-online-desktop.svg" />
+            <source media="(min-width:860px)" srcset="./images/illustration-woman-online-desktop.svg" />
             <img src="./images/illustration-woman-online-mobile.svg" alt="Illustration Woman Online"
               title="Illustration Woman Online" />
           </picture>
+          <img src="./images/illustration-box-desktop.svg" alt="Illustration Box Desktop" title="Illustration Box"
+            class="box-desktop-image" />
         </div>
 
         <div class="faq">
           <h1>FAQ</h1>
+          <input type="radio" id="close-faq" name="question" value="Close All Faq" class="rbd-close" checked="true">
           <div class="question-box">
             <input type="radio" id="faq-1" name="question" value="Open Faq 1" class="radio-button">
             <label for="faq-1">
@@ -37,6 +40,7 @@
               <div class="icon-arrow">
                 <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
               </div>
+              <label for="close-faq" class="toggle-overlay" title="Hide"></label>
             </label>
             <p>
               You can invite up to 2 additional users on the Free plan. There is no limit on
@@ -51,6 +55,7 @@
               <div class="icon-arrow">
                 <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
               </div>
+              <label for="close-faq" class="toggle-overlay" title="Hide"></label>
             </label>
             <p>
               No more than 2GB. All files in your account must fit your allotted storage space.
@@ -64,6 +69,7 @@
               <div class="icon-arrow">
                 <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
               </div>
+              <label for="close-faq" class="toggle-overlay" title="Hide"></label>
             </label>
             <p>
               Click “Forgot password” from the login page or “Change password” from your profile page.
@@ -78,6 +84,7 @@
               <div class="icon-arrow">
                 <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
               </div>
+              <label for="close-faq" class="toggle-overlay" title="Hide"></label>
             </label>
             <p>
               Yes! Send us a message and we'll process your request no questions asked.
@@ -91,6 +98,7 @@
               <div class="icon-arrow">
                 <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
               </div>
+              <label for="close-faq" class="toggle-overlay" title="Hide"></label>
             </label>
             <p>
               Chat and email support is available 24/7. Phone lines are open during normal business hours.
@@ -103,11 +111,11 @@
   </div>
 
 
-  <!-- <div class="attribution" role="contentinfo">
+  <div class="attribution" role="contentinfo">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
       rel="noopener noreferrer">Frontend Mentor</a>.
     Coded by <a href="https://cholis04.github.io" target="_blank" rel="noopener noreferrer">cholis04</a>.
-  </div> -->
+  </div>
 </body>
 
 </html>

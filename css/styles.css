@@ -1,14 +1,14 @@
-/* .attribution {
-    font-size: 11px;
-    text-align: center;
-  }
+/* ############################# ↓ MY SOLUTION CSS ↓ ################################## */
 
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  } */
-
-/* ############# ↓ MY SOLUTION CSS ↓ ################## */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --text-primary-color-1: hsl(238, 29%, 16%);
+  --text-primary-color-2: hsl(14, 88%, 65%);
+  --text-neutral-color-1: hsl(237, 12%, 33%);
+  --text-neutral-color-2: hsl(240, 6%, 50%);
+  --divider: hsl(240, 5%, 91%);
+}
 
 * {
   margin: 0;
@@ -60,6 +60,9 @@ body {
   margin-top: -33%;
   width: 72%;
 }
+.box-faq > .thumbnail > img.box-desktop-image {
+  display: none;
+}
 
 .box-faq > .faq {
   width: 100%;
@@ -70,7 +73,7 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 32px;
-  color: hsl(238, 29%, 16%);
+  color: var(--text-primary-color-1);
 }
 .box-faq > .faq > hr {
   border-color: hsla(240, 4%, 91%, 0.329);
@@ -79,22 +82,32 @@ body {
 .box-faq > .faq > .question-box {
   position: relative;
 }
-.box-faq > .faq > .question-box > input[type='radio'].radio-button {
+.box-faq > .faq > .question-box > input[type='radio'].radio-button,
+.box-faq > .faq > input[type='radio'].rbd-close {
   display: none;
 }
 
 .box-faq > .faq > .question-box > label {
+  position: relative;
   margin: 16px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .box-faq > .faq > .question-box > label > h2 {
+  padding-right: 4px;
   flex-grow: 1;
   font-size: 14px;
+  line-height: 140%;
   font-weight: 400;
+  color: var(--text-neutral-color-1);
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+@media (hover: hover) {
+  .box-faq > .faq > .question-box > label > h2:hover {
+    color: var(--text-primary-color-2);
+  }
 }
 
 .box-faq > .faq > .question-box > label > .icon-arrow > img {
@@ -104,16 +117,27 @@ body {
   cursor: pointer;
   transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+.box-faq > .faq > .question-box > label > label.toggle-overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  cursor: pointer;
+}
 .box-faq > .faq > .question-box > p {
   line-height: 160%;
   font-size: 12px;
-  color: hsl(237, 12%, 33%);
+  color: var(--text-neutral-color-2);
   margin-bottom: 0;
-  display: none;
-  transition: all 0.3s ease-in-out;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
 }
 
-/* ################### ACTIVE STATE ############### */
+/* ############################################################## ACTIVE STATE ############### */
+
 .box-faq
   > .faq
   > .question-box
@@ -131,10 +155,93 @@ body {
   > h2 {
   font-weight: 700;
 }
-.box-faq > .faq > .question-box > input[type='radio'].radio-button:checked ~ p {
-  margin-bottom: 16px;
+.box-faq
+  > .faq
+  > .question-box
+  > input[type='radio'].radio-button:checked
+  ~ label
+  > label.toggle-overlay {
   display: block;
 }
-/* ################### ACTIVE STATE ############### */
+.box-faq > .faq > .question-box > input[type='radio'].radio-button:checked ~ p {
+  height: auto;
+  margin-bottom: 16px;
+}
+
+/* ############################################################## ACTIVE STATE ############### */
 
 /* ################## BOX FAQ #################### */
+
+.attribution {
+  margin: 60px auto;
+  font-size: 11px;
+  text-align: center;
+  color: rgb(216, 216, 216);
+}
+
+.attribution a {
+  color: hsl(227, 100%, 96%);
+}
+
+/* ################################### MEDIA QUERY ###################################### */
+/* ################################### MEDIA QUERY ###################################### */
+/* ################################### MEDIA QUERY ###################################### */
+
+@media only screen and (min-width: 860px) {
+  .box-faq {
+    margin-top: 0;
+    padding-bottom: 0;
+    background-image: url('../images/bg-pattern-desktop.svg');
+    background-position: -580px -296px;
+    background-size: unset;
+    min-height: 480px;
+    max-width: 920px;
+    display: flex;
+    align-content: center;
+  }
+  .box-faq > .thumbnail {
+    position: relative;
+
+    margin: 0 auto;
+    flex-grow: 1;
+    min-height: inherit;
+    display: flex;
+    align-content: center;
+  }
+  .box-faq > .thumbnail > .card-thumbnail {
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  .box-faq > .thumbnail > .card-thumbnail > img {
+    margin-top: 0;
+    margin-left: -16%;
+    width: 100%;
+  }
+  .box-faq > .thumbnail > img.box-desktop-image {
+    width: 40%;
+    position: absolute;
+    display: block;
+    left: -20%;
+    top: 41%;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .box-faq > .thumbnail > img.box-desktop-image:hover {
+    transform: scale(1.1);
+    top: 38%;
+    cursor: no-drop;
+  }
+
+  .box-faq > .faq {
+    width: 50%;
+    padding: 28px 100px 28px 24px;
+    margin-bottom: 40px;
+  }
+  .box-faq > .faq > h1 {
+    text-align: left;
+  }
+  .box-faq > .faq > .question-box > label > h2 {
+    padding-right: 24px;
+  }
+}
+/* ############### MEDIA QUERY ################ */
