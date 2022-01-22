@@ -94,7 +94,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.box-faq > .faq > .question-box > label.show-label > p {
+.box-faq > .faq > .question-box > label.show-label > span {
   padding-right: 4px;
   flex-grow: 1;
   font-size: 14px;
@@ -105,29 +105,18 @@ body {
   transition: all 0.2s ease-in-out;
 }
 @media (hover: hover) {
-  .box-faq > .faq > .question-box > label.show-label > p:hover {
+  .box-faq > .faq > .question-box > label.show-label > span:hover {
     color: var(--text-primary-color-2);
   }
 }
 
-.box-faq > .faq > .question-box > label.show-label > .icon-arrow > img {
+.box-faq > .faq > .question-box > label.show-label > img.icon-arrow {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   cursor: pointer;
   transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-/* 
-.box-faq > .faq > .question-box > label.toggle-overlay {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
-  cursor: pointer;
-} 
-*/
 .box-faq > .faq > .question-box > p {
   line-height: 160%;
   font-size: 12px;
@@ -145,8 +134,7 @@ body {
   > .question-box
   > input[type='radio'].radio-button:checked
   ~ label.show-label
-  > .icon-arrow
-  > img {
+  > img.icon-arrow {
   transform: rotate(180deg);
 }
 .box-faq
@@ -154,18 +142,9 @@ body {
   > .question-box
   > input[type='radio'].radio-button:checked
   ~ label.show-label
-  > p {
+  > span {
   font-weight: 700;
 }
-/* 
-.box-faq
-  > .faq
-  > .question-box
-  > input[type='radio'].radio-button:checked
-  ~ label.toggle-overlay {
-  display: block;
-} 
-*/
 .box-faq > .faq > .question-box > input[type='radio'].radio-button:checked ~ p {
   height: auto;
   margin-bottom: 16px;
@@ -243,7 +222,7 @@ body {
   .box-faq > .faq > h1 {
     text-align: left;
   }
-  .box-faq > .faq > .question-box > label.show-label > p {
+  .box-faq > .faq > .question-box > label.show-label > span {
     padding-right: 24px;
   }
 }
