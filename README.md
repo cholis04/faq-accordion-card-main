@@ -51,8 +51,6 @@ However, other problems persist. On the checkbox we can uncheck / deselect the o
 
 Without using javascript, this would be a bit tricky. I added an option to another hidden radio button. some kind of hook maybe. So on each accordion box I put a label that points to one radio input type.
 
-![Radio Button Overlay](./screenshot/Hook-Radion-Button.png)
-
 Yes, maybe you all have an even better way to make writing code much simpler. Feel free to let me know that.
 
 ### What I learned
@@ -80,10 +78,10 @@ Creating accordion elements using radio buttons
     <label for="faq-1">
       <h2>How many team members can I invite?</h2>
       <div class="icon-arrow">
-        <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
+        <img src="./images/icon-arrow-down.svg" alt="" title="Show" />
       </div>
-      <label for="close-faq" class="toggle-overlay" title="Hide"></label>
     </label>
+    <!-- <label for="close-faq" class="toggle-overlay" title="Hide"></label> -->
     <p>
       You can invite up to 2 additional users on the Free plan. There is no
       limit on team members for the Premium plan.
@@ -102,10 +100,10 @@ Creating accordion elements using radio buttons
     <label for="faq-2">
       <h2>What is the maximum file upload size?</h2>
       <div class="icon-arrow">
-        <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
+        <img src="./images/icon-arrow-down.svg" alt="" title="Show" />
       </div>
-      <label for="close-faq" class="toggle-overlay" title="Hide"></label>
     </label>
+    <label for="close-faq" class="toggle-overlay" title="Hide"></label>
     <p>
       No more than 2GB. All files in your account must fit your allotted storage
       space.
@@ -126,7 +124,7 @@ Add position on background image in css,
 
 ### Continued development
 
-So far, the radio button can't be unchecked. However it can be done if using checkbox , but all accordion elements don't close automatically. It is very complicated. It may be necessary to have Javascript to manipulate accordion elements. What do you think?
+So far, the radio button can't be unchecked. However it can be done if using checkbox , but all accordion elements don't close automatically. It is very complicated. It may be necessary to have Javascript to manipulate accordion elements.
 
 ## Author
 
