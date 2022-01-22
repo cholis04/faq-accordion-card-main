@@ -49,8 +49,6 @@ This is why I use radio buttons instead of checkboxes. because the radio button 
 
 However, other problems persist. On the checkbox we can uncheck / deselect the options, this allowing the accordion to be open or closed.But on radio buttons. once we select , we can not deselect alias Uncheck. This causes the accordion element to continue to open.
 
-Without using javascript, this would be a bit tricky. I added an option to another hidden radio button. some kind of hook maybe. So on each accordion box I put a label that points to one radio input type.
-
 Yes, maybe you all have an even better way to make writing code much simpler. Feel free to let me know that.
 
 ### What I learned
@@ -58,59 +56,40 @@ Yes, maybe you all have an even better way to make writing code much simpler. Fe
 Creating accordion elements using radio buttons
 
 ```html
-<div class="faq">
-  <h1>FAQ</h1>
+<div class="question-box">
   <input
     type="radio"
-    id="close-faq"
+    id="faq-1"
     name="question"
-    value="Close All Faq"
-    class="rbd-close"
+    value="Open Faq 1"
+    class="radio-button"
   />
-  <div class="question-box">
-    <input
-      type="radio"
-      id="faq-1"
-      name="question"
-      value="Open Faq 1"
-      class="radio-button"
+  <label for="faq-1">
+    <span>How many team members can I invite?</span>
+    <img
+      src="./images/icon-arrow-down.svg"
+      alt=""
+      title="Show"
+      class="icon-arrow"
     />
-    <label for="faq-1">
-      <h2>How many team members can I invite?</h2>
-      <div class="icon-arrow">
-        <img src="./images/icon-arrow-down.svg" alt="" title="Show" />
-      </div>
-    </label>
-    <!-- <label for="close-faq" class="toggle-overlay" title="Hide"></label> -->
-    <p>
-      You can invite up to 2 additional users on the Free plan. There is no
-      limit on team members for the Premium plan.
-    </p>
-  </div>
-  <hr />
-  <div class="question-box">
-    <input
-      type="radio"
-      id="faq-2"
-      name="question"
-      value="Open Faq 2"
-      class="radio-button"
-      checked="true"
-    />
-    <label for="faq-2">
-      <h2>What is the maximum file upload size?</h2>
-      <div class="icon-arrow">
-        <img src="./images/icon-arrow-down.svg" alt="" title="Show" />
-      </div>
-    </label>
-    <label for="close-faq" class="toggle-overlay" title="Hide"></label>
-    <p>
-      No more than 2GB. All files in your account must fit your allotted storage
-      space.
-    </p>
-  </div>
-  <hr />
+  </label>
+  <p>
+    You can invite up to 2 additional users on the Free plan. There is no limit
+    on team members for the Premium plan.
+  </p>
 </div>
+```
+
+```css
+.box-faq > .faq > .question-box > p {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.box-faq > .faq > .question-box > input[type='radio'].radio-button:checked ~ p {
+  height: auto;
+  margin-bottom: 16px;
+}
 ```
 
 Add position on background image in css,
