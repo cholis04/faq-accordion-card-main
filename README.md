@@ -12,9 +12,7 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -30,85 +28,110 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Design](./screenshot/web-capture-1.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://cholis04.github.io/faq-accordion-card-main/](https://cholis04.github.io/faq-accordion-card-main/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- Mobile-first workflow
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- HTML Radio Button
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+I decided not to use javascript in this challenge. So I need to use :checked state on css. Yes, checkboxes allow for that, but to create an accordion element, only one element is open the others will be closed.
+
+This is why I use radio buttons instead of checkboxes. because the radio button can be used to select only one option.
+
+However, other problems persist. On the checkbox we can uncheck / deselect the options, this allowing the accordion to be open or closed.But on radio buttons. once we select , we can not deselect alias Uncheck. This causes the accordion element to continue to open.
+
+Without using javascript, this would be a bit tricky. I added an option to another hidden radio button. some kind of hook maybe. So on each accordion box I put a label that points to one radio input type.
+
+![Radio Button Overlay](./screenshot/Hook-Radion-Button.png)
+
+Yes, maybe you all have an even better way to make writing code much simpler. Feel free to let me know that.
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+Creating accordion elements using radio buttons
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="faq">
+  <h1>FAQ</h1>
+  <input
+    type="radio"
+    id="close-faq"
+    name="question"
+    value="Close All Faq"
+    class="rbd-close"
+  />
+  <div class="question-box">
+    <input
+      type="radio"
+      id="faq-1"
+      name="question"
+      value="Open Faq 1"
+      class="radio-button"
+    />
+    <label for="faq-1">
+      <h2>How many team members can I invite?</h2>
+      <div class="icon-arrow">
+        <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
+      </div>
+      <label for="close-faq" class="toggle-overlay" title="Hide"></label>
+    </label>
+    <p>
+      You can invite up to 2 additional users on the Free plan. There is no
+      limit on team members for the Premium plan.
+    </p>
+  </div>
+  <hr />
+  <div class="question-box">
+    <input
+      type="radio"
+      id="faq-2"
+      name="question"
+      value="Open Faq 2"
+      class="radio-button"
+      checked="true"
+    />
+    <label for="faq-2">
+      <h2>What is the maximum file upload size?</h2>
+      <div class="icon-arrow">
+        <img src="./images/icon-arrow-down.svg" alt="Icon Arrow" title="Show" />
+      </div>
+      <label for="close-faq" class="toggle-overlay" title="Hide"></label>
+    </label>
+    <p>
+      No more than 2GB. All files in your account must fit your allotted storage
+      space.
+    </p>
+  </div>
+  <hr />
+</div>
 ```
+
+Add position on background image in css,
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.box-faq {
+  background-position: -580px -296px;
+  /* background-position: center top; */
 }
 ```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+So far, the radio button can't be unchecked. However it can be done if using checkbox , but all accordion elements don't close automatically. It is very complicated. It may be necessary to have Javascript to manipulate accordion elements. What do you think?
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [https://cholis04.github.io](https://cholis04.github.io)
+- Frontend Mentor - [@cholis04](https://www.frontendmentor.io/profile/cholis04)
+- Dribbble - [cholis04](https://dribbble.com/cholis04)
+- Instagram - [@cholis04](https://instagram.com/cholis04)
+- Codepen - [cholis04](https://codepen.io/cholis04)
